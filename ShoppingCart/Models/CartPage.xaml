@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ShoppingCart.Models"
+             x:Class="ShoppingCart.Models.CartPage"
+             Title="CartPage">
+
+    <CollectionView ItemsSource="{Binding Shoes}" SelectionMode="None">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="10" BackgroundColor="#f0f0f0">
+                    <!-- Add bindings to display shoe information -->
+                    <Label Text="{Binding ShoeType}" FontSize="18" Grid.Column="0"/>
+                    <Label Text="{Binding ShoePrice, StringFormat='Price: ${0:F2}'}" FontSize="16" Grid.Column="1" HorizontalTextAlignment="End"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>
